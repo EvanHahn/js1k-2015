@@ -9,8 +9,8 @@
   var centerX = width / 2;
   var centerY = height / 2;
 
-  b.style.background = '#666';
-  b.innerHTML += '<div id=p style="border:3px solid #009;background:#08b;width:50px;height:50px;position:absolute;margin-left:-25px;margin-top:-25px">';
+  b.style.background = '#111';
+  b.innerHTML += '<div id=p style="background:#ff9;width:50px;height:50px;position:absolute;margin-left:-25px;margin-top:-25px">';
 
   var playerX = centerX;
   var playerY = centerY;
@@ -25,7 +25,6 @@
 
   b.onkeydown = function(event) {
     var keyCode = event.keyCode;
-    console.log(keyCode);
     if (keyCode == 87) {
       playerVelocityY = -10;
     } else if (keyCode == 83) {
@@ -55,6 +54,7 @@
     p.style.transform = 'rotate(' + (playerAngle * 180 / Math.PI) + 'deg)';
     p.style.left = playerX + 'px';
     p.style.top = playerY + 'px';
+    p.style.boxShadow = '0 0 ' + ((Math.sin(t / 500) * 10) + 100) + 'px #ffb';
 
     playerX += playerVelocityX * dt;
     playerY += playerVelocityY * dt;

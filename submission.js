@@ -27,22 +27,22 @@
   b.onkeydown = function(event) {
     var keyCode = event.keyCode;
     console.log(keyCode);
-    if (keyCode === 87) {
+    if (keyCode == 87) {
       playerVelocityY = -10;
-    } else if (keyCode === 83) {
+    } else if (keyCode == 83) {
       playerVelocityY = 10;
-    } else if (keyCode === 65) {
+    } else if (keyCode == 65) {
       playerVelocityX = -10;
-    } else if (keyCode === 68) {
+    } else if (keyCode == 68) {
       playerVelocityX = 10;
     }
   };
 
   b.onkeyup = function(event) {
     var keyCode = event.keyCode;
-    if ((keyCode === 87) || (keyCode === 83)) {
+    if ((keyCode == 87) || (keyCode == 83)) {
       playerVelocityY = 0;
-    } else if ((keyCode === 65) || (keyCode === 68)) {
+    } else if ((keyCode == 65) || (keyCode == 68)) {
       playerVelocityX = 0;
     }
   };
@@ -50,7 +50,7 @@
   var lastTick = 0;
   function tick(t) {
 
-    var dt = (t - lastTick) / 100;
+    var dt = (t - lastTick) / 50;
     lastTick = t;
 
     p.style.transform = 'rotate(' + (playerAngle * 180 / Math.PI) + 'deg)';

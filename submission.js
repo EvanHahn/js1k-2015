@@ -15,21 +15,50 @@
   var playerY = centerY;
   var playerAngle = 0;
 
+  var playerVelocityX = 0;
+  var playerVelocityY = 0;
+
   b.style.background = '#666';
 
   b.onmousemove = function(event) {
     playerAngle = Math.atan2(playerY - event.pageY, playerX - event.pageX);
   };
 
+  b.onkeydown = function(event) {
+    var keyCode = event.keyCode;
+    console.log(keyCode);
+    if (keyCode === 87) {
+      playerVelocityY = -10;
+    } else if (keyCode === 83) {
+      playerVelocityY = 10;
+    } else if (keyCode === 65) {
+      playerVelocityX = -10;
+    } else if (keyCode === 68) {
+      playerVelocityX = 10;
+    }
+  };
+
+  b.onkeyup = function(event) {
+    var keyCode = event.keyCode;
+    if ((keyCode === 87) || (keyCode === 83)) {
+      playerVelocityY = 0;
+    } else if ((keyCode === 65) || (keyCode === 68)) {
+      playerVelocityX = 0;
+    }
+  };
+
   var lastTick = 0;
   function tick(t) {
 
-    var dt = t - lastTick;
+    var dt = (t - lastTick) / 100;
     lastTick = t;
 
     p.style.transform = 'rotate(' + (playerAngle * 180 / Math.PI) + 'deg)';
     p.style.left = playerX + 'px';
     p.style.top = playerY + 'px';
+
+    playerX += playerVelocityX * dt;
+    playerY += playerVelocityY * dt;
 
     requestAnimationFrame(tick);
 

@@ -45,7 +45,6 @@ app.get('/prod', function(req, res) {
     } else {
       code = crushed;
     }
-    console.log(code.length + ' characters');
   } catch (_error) {
     code = 'console.error("Error minifying code.");\n' + code;
   }

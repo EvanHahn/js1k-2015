@@ -9,6 +9,7 @@
   var centerX = width / 2;
   var centerY = height / 2;
 
+  b.style.background = '#666';
   b.innerHTML += '<div id=p style="border:3px solid #009;background:#08b;width:50px;height:50px;position:absolute;margin-left:-25px;margin-top:-25px">';
 
   var playerX = centerX;
@@ -17,8 +18,6 @@
 
   var playerVelocityX = 0;
   var playerVelocityY = 0;
-
-  b.style.background = '#666';
 
   b.onmousemove = function(event) {
     playerAngle = Math.atan2(playerY - event.pageY, playerX - event.pageX);

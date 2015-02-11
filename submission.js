@@ -56,7 +56,8 @@
 
   var lastTick = 0;
   var nextInterval = 1;
-  function tick(t) {
+
+  (function tick(t) {
 
     var dt = (t - lastTick) / 50;
     lastTick = t;
@@ -73,9 +74,7 @@
 
     requestAnimationFrame(tick);
 
-  }
-
-  tick(0);
+  })(0);
 
   // =========
   // utilities

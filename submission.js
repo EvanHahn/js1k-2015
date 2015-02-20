@@ -16,7 +16,7 @@ X, Y, Z, and _ are temporary
 
 I = 'second minute hour day week month year'.split(' ');
 
-document.documentElement.style.cssText = 'width:100%;height:100%;display:table;font-family:sans-serif';
+document.documentElement.style.cssText = 'width:100%;height:100%;display:table;font-family:sans-serif;background-color:#f5f5f9';
 b.style.cssText = 'display:table-cell;vertical-align:middle;text-align:center';
 
 a = I.map(function(unit, index) {
@@ -30,6 +30,7 @@ a = I.map(function(unit, index) {
   _.id = unit;
 
   _.m = [1000, 60000, 3600000, 86400000, 604800000, 2629800000, 31557600000][index];
+  _.f = ['#fa8072', '#faad72', '#fada72', '#ecfa72', '#87ceeb', '#87aceb', '#a4b7eb'][index];
 
   _.e = function(result) {
     result = new Date;
@@ -49,8 +50,7 @@ a = I.map(function(unit, index) {
         result.setMilliseconds(0);
     }
     if (unit === 'week') {
-      // TODO this is broken
-      result.setDate(result.getDate() - result.getDay() + 7);
+      result.setDate(result.getDate() + (7 - result.getDay()));
     }
     result.setTime(result.getTime() + this.m - 1);
     return result;
@@ -74,6 +74,8 @@ h = s / 2;
   a.forEach(function(canvas) {
 
     canvas.c.clearRect(0, 0, s, s);
+
+    canvas.c.fillStyle = canvas.f;
 
     canvas.c.beginPath();
     canvas.c.moveTo(h, h);

@@ -16,7 +16,7 @@ X, Y, Z, and _ are temporary
 
 I = 'sec min hr day wk mon yr'.split(' ');
 
-document.documentElement.style.cssText = 'width:100%;height:100%;display:table;background-color:#333';
+document.documentElement.style.cssText = 'width:100%;height:100%;display:table;background:#333';
 b.style.cssText = 'display:table-cell;vertical-align:middle;text-align:center';
 
 t = Infinity;

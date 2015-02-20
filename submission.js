@@ -30,28 +30,28 @@ a = I.map(function(unit, index) {
 
   _.m = [1000, 60000, 3600000, 86400000, 604800000, 2629800000, 31557600000][index];
 
-  _.e = function(result) {
-    result = new Date;
+  _.e = function() {
+    Z = new Date;
     switch (unit) {
       case 'yr':
-        result.setMonth(0);
+        Z.setMonth(0);
       case 'mon':
-        result.setDate(1);
+        Z.setDate(1);
       case 'wk':
       case 'day':
-        result.setHours(0);
+        Z.setHours(0);
       case 'hr':
-        result.setMinutes(0);
+        Z.setMinutes(0);
       case 'min':
-        result.setSeconds(0);
+        Z.setSeconds(0);
       case 'sec':
-        result.setMilliseconds(0);
+        Z.setMilliseconds(0);
     }
     if (unit === 'wk') {
-      result.setDate(result.getDate() - result.getDay());
+      Z.setDate(Z.getDate() - Z.getDay());
     }
-    result.setTime(result.getTime() + this.m - 1);
-    return result;
+    Z.setTime(Z.getTime() + this.m - 1);
+    return Z;
   };
 
   _.c = _.getContext('2d');

@@ -27,10 +27,8 @@ a = I.map(function(unit, index) {
   _ = document.createElement('canvas');
   s = _.width = _.height = innerWidth / 8;
 
-  _.id = unit;
-
   _.m = [1000, 60000, 3600000, 86400000, 604800000, 2629800000, 31557600000][index];
-  _.f = ['#fa8072', '#faad72', '#fada72', '#ecfa72', '#87ceeb', '#87aceb', '#a4b7eb'][index];
+  _.f = ['#fa8072', '#faad72', '#fada72', '#acda72', '#87ceeb', '#87aceb', '#a4b7eb'][index];
 
   _.e = function(result) {
     result = new Date;

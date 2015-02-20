@@ -28,7 +28,6 @@ a = I.map(function(unit, index) {
   s = _.width = _.height = innerWidth / 8;
 
   _.m = [1000, 60000, 3600000, 86400000, 604800000, 2629800000, 31557600000][index];
-  _.f = ['#fa8072', '#faad72', '#fada72', '#acda72', '#87ceeb', '#87aceb', '#a4b7eb'][index];
 
   _.e = function(result) {
     result = new Date;
@@ -55,6 +54,7 @@ a = I.map(function(unit, index) {
   };
 
   _.c = _.getContext('2d');
+  _.c.fillStyle = _.c.strokeStyle = ['#fa8072', '#faad72', '#fada72', '#acda72', '#87ceeb', '#87aceb', '#a4b7eb'][index];
 
   X.appendChild(_);
   X.appendChild(Y = document.createElement('div'));
@@ -73,12 +73,15 @@ h = s / 2;
 
     canvas.c.clearRect(0, 0, s, s);
 
-    canvas.c.fillStyle = canvas.f;
-
     canvas.c.beginPath();
     canvas.c.moveTo(h, h);
     canvas.c.arc(s / 2, s / 2, s * 0.45, 0, 2 * Math.PI * ((canvas.e() - new Date) / canvas.m));
     canvas.c.fill();
+
+    canvas.c.beginPath();
+    canvas.c.moveTo(h, h);
+    canvas.c.arc(s / 2, s / 2, s * 0.45, 0, 2 * Math.PI);
+    canvas.c.stroke();
 
   });
 

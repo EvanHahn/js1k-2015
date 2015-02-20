@@ -4,7 +4,6 @@
 
 a = canvases
 b = body
-h = half the canvas size
 s = canvas size
 
 I = intervals
@@ -65,8 +64,6 @@ a = I.map(function(unit, index) {
 
 });
 
-h = s / 2;
-
 (function T() {
 
   a.forEach(function(canvas) {
@@ -74,12 +71,12 @@ h = s / 2;
     canvas.c.clearRect(0, 0, s, s);
 
     canvas.c.beginPath();
-    canvas.c.moveTo(h, h);
+    canvas.c.moveTo(s / 2, s / 2);
     canvas.c.arc(s / 2, s / 2, s * 0.45, 0, 2 * Math.PI * ((canvas.e() - new Date) / canvas.m));
     canvas.c.fill();
 
     canvas.c.beginPath();
-    canvas.c.moveTo(h, h);
+    canvas.c.moveTo(s / 2, s / 2);
     canvas.c.arc(s / 2, s / 2, s * 0.45, 0, 2 * Math.PI);
     canvas.c.stroke();
 

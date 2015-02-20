@@ -16,7 +16,6 @@ X, Y, Z, and _ are temporary
 document.documentElement.style.cssText = 'width:100%;height:100%;display:table;background:#333;font-family:"Helvetica Neue",sans-serif;font-weight:100';
 b.style.cssText = 'display:table-cell;vertical-align:middle;text-align:center';
 
-t = Infinity;
 a = 'second minute hour day week month year'.split(' ').map(function(unit, index) {
 
   _ = document.createElement('canvas');

@@ -51,8 +51,7 @@ a = 'second minute hour day week month year'.split(' ').map(function(unit, index
     if (unit === 'week') {
       Z.setDate(Z.getDate() - Z.getDay());
     }
-    Z.setTime(Z.getTime() + this.m - 1);
-    return Z;
+    return Z.getTime() + this.m - 1;
   };
 
   // .c represents the context.

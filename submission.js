@@ -56,8 +56,7 @@ a = I.map(function(unit, index) {
   (Y = document.createElement('div')).innerHTML = unit;
   (X = document.createElement('div')).appendChild(_);
   X.style.cssText = 'display:inline-block;color:' + (_.c.fillStyle = _.c.strokeStyle = ['#fa8072', '#faad72', '#fada72', '#acda72', '#87ceeb', '#87aceb', '#a4b7eb'][index]) + ';font-size:' + (s / 8) + 'px';
-  X.appendChild(Y);
-  b.appendChild(X);
+  (b.appendChild(X)).appendChild(Y);
 
   return _;
 

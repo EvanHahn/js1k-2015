@@ -1,10 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "start": "6to5-node server/app"
+    "start": "babel-node server/app"
   },
   "devDependencies": {
-    "6to5": "^3.5.3",
+    "babel": "^4.3.0",
     "ejs": "^2.2.4",
     "express": "^4.11.2",
     "jscrush": "0.0.0",

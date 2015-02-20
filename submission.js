@@ -15,7 +15,7 @@ X, Y, Z, and _ are temporary
 
 // Style <html> and <body>.
 
-document.documentElement.style.cssText = 'width:100%;height:100%;font-weight:100;display:table;background:#333;font-family:"Helvetica Neue",sans-serif';
+document.documentElement.style.cssText = 'width:100%;height:100%;font-weight:100;display:table;background:#333;font-family:"Helvetica Neue",sans-serif;letter-spacing:.1em';
 b.style.cssText = 'display:table-cell;vertical-align:middle;text-align:center';
 
 // Take an array of intervals ('second', 'minute', etc) and turn them into an array of <canvas>es.
@@ -24,7 +24,7 @@ a = 'second minute hour day week month year'.split(' ').map(function(unit, index
 
   // Create the canvas and set some properties.
   _ = document.createElement('canvas');
-  s = _.width = _.height = innerWidth / 7;  // Also sneak in a definition of the canvas size.
+  s = _.width = _.height = innerWidth / 8;  // Also sneak in a definition of the canvas size.
 
   // .m represents the number of milliseconds for each interval.
   _.m = [1000, 60000, 3600000, 86400000, 604800000, 2629800000, 31557600000][index];

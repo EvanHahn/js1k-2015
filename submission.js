@@ -6,20 +6,18 @@ a = canvases
 b = body
 s = canvas size
 
-I = intervals
 T = tick
 
 X, Y, Z, and _ are temporary
 
 */
 
-I = 'second minute hour day week month year'.split(' ');
 
 document.documentElement.style.cssText = 'width:100%;height:100%;display:table;background:#333;font-family:"Helvetica Neue",sans-serif;font-weight:100';
 b.style.cssText = 'display:table-cell;vertical-align:middle;text-align:center';
 
 t = Infinity;
-a = I.map(function(unit, index) {
+a = 'second minute hour day week month year'.split(' ').map(function(unit, index) {
 
   _ = document.createElement('canvas');
   s = _.width = _.height = innerWidth / 7;

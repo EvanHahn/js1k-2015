@@ -23,7 +23,6 @@ a = I.map(function(unit, index) {
 
   _ = document.createElement('canvas');
   s = _.width = _.height = innerWidth / 7;
-  b.style.fontSize = (s / 8) + 'px';
 
   _.m = [1000, 60000, 3600000, 86400000, 604800000, 2629800000, 31557600000][index];
 
@@ -56,7 +55,7 @@ a = I.map(function(unit, index) {
 
   (Y = document.createElement('div')).innerHTML = unit;
   (X = document.createElement('div')).appendChild(_);
-  X.style.cssText = 'display:inline-block;color:' + (_.c.fillStyle = _.c.strokeStyle = ['#fa8072', '#faad72', '#fada72', '#acda72', '#87ceeb', '#87aceb', '#a4b7eb'][index]);
+  X.style.cssText = 'display:inline-block;color:' + (_.c.fillStyle = _.c.strokeStyle = ['#fa8072', '#faad72', '#fada72', '#acda72', '#87ceeb', '#87aceb', '#a4b7eb'][index]) + ';font-size:' + (s / 8) + 'px';
   X.appendChild(Y);
   b.appendChild(X);
 

@@ -48,7 +48,7 @@ a = I.map(function(unit, index) {
         result.setMilliseconds(0);
     }
     if (unit === 'week') {
-      result.setDate(result.getDate() + (7 - result.getDay()));
+      result.setDate(result.getDate() - result.getDay());
     }
     result.setTime(result.getTime() + this.m - 1);
     return result;
